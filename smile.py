@@ -40,8 +40,11 @@ def draw_matrix(matrix):
             cell = matrix[row][col]
             if cell == 1:
                 fillcolor("red")
-            else:
+            if cell == 2:
+                fillcolor("black")
+            if cell == 0:
                 fillcolor("violet")
+
             curX = startX + shapeSide * col
             curY = startY - shapeSide * row
             goto(curX, curY)
