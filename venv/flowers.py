@@ -12,7 +12,7 @@
 import turtle as t
 
 t.penup()
-t.goto(-200,200)
+t.goto(-300,300)
 a= abs(t.pos())
 t.pendown()
 t.begin_fill()
@@ -31,36 +31,44 @@ t.end_fill()
 t.penup()
 
 
-def draw_square(color):
+def draw_square(color,x=0,y=0):
+    t.goto(x,y)
     t.begin_fill()
     t.pendown()
     t.color(color, 'red')
-    t.forward(70)
+    t.forward(60)
     t.left(90)
-    t.forward(70)
+    t.forward(60)
     t.left(90)
-    t.forward(70)
+    t.forward(60)
     t.left(90)
-    t.forward(70)
+    t.forward(60)
     t.left(90)
     t.fillcolor(color)
     t.penup()
     t.end_fill()
 
 
-t.goto(60, 60)
-draw_square('purple')
-t.goto(-60, -60)
-draw_square('orange')
-t.goto(-60, 60)
-draw_square('pink')
-t.goto(60, -60)
-draw_square('blue')
-t.goto(0, 0)
+def drow_flower(x,y,size=60)
+    draw_square('purple', x-size,y-size)
+    draw_square('orange', x+size,y+size)
+    draw_square('pink', x-y+60)
+    draw_square('blue', x+60,y-60)
+    draw_square('yellow', x-0,y-0)
+
+
+drow_flower(100,-100)
+drow_flower(-100,-10,size=30)
+drow_flower(170,-300)
+drow_flower(-250,-300)
+drow_flower(-100,200)
+drow_flower(166,200)
 t.color('blue')
-draw_square('yellow')
 t.shape("turtle")
 t.hideturtle()
+
+
+
 
 t.pendown()
 
